@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { NextProviders } from "./providers";
 
 const interSans = Inter({
 	variable: "--font-inter-sans",
@@ -23,11 +24,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="es" suppressHydrationWarning>
 			<body
 				className={`${interSans.variable} ${jetbrainsMono.variable} antialiased`}
 			>
-				{children}
+				<NextProviders>{children}</NextProviders>
 			</body>
 		</html>
 	);
